@@ -74,6 +74,7 @@ public class AdminController {
 		
 		 @GetMapping("/adminLoginValidation")
 		    public String adminLoginValidation(@RequestParam String userName, @RequestParam String password, Model model) {
+			 
 		        if (validationService.isValidLogin(userName, password)) {
 		            model.addAttribute("successMessage", "Login successful!");
 		            return "adminHome";  // Redirect to the admin dashboard or another secure page
